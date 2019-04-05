@@ -103,7 +103,7 @@ class PrivateTagsApiTests(TestCase):
 
     def test_retrieve_tags_assigned_unique(self):
         """Test filtering tags by assigned returns unique items"""
-        tag = Tag.object.create(user=self.user, name='Breakfast')
+        tag = Tag.objects.create(user=self.user, name='Breakfast')
         Tag.objects.create(user=self.user, name='Lunch')
         recipe1 = Recipe.objects.create(
             user=self.user,
